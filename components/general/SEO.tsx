@@ -1,6 +1,7 @@
 import { SEODescription, siteName } from "@/utils/variables";
 import Head from "next/head";
 import Script from "next/script";
+import React from "react";
 
 type SEOProps = {
   title?: string;
@@ -14,8 +15,8 @@ const SEO: React.FC<SEOProps> = ({
   title,
   description,
   image,
-  imageDescription,
-  locale
+  // imageDescription,
+  locale,
 }) => {
   return (
     <>

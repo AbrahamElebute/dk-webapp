@@ -6,13 +6,22 @@ interface HeroBannerProps {
 }
 
 const HeroBanner: React.FC<HeroBannerProps> = ({ images }) => {
+  const getFlexValue = (index: number) => {
+    if (images.length === 1) {
+      return 1;
+    }
+    if (index === 0) {
+      return 0.6;
+    }
+    return 0.4;
+  };
   return (
     <div className="h-[clamp(20rem,47vw,32rem)] flex flex-col gap-4">
       {images.map((image, index) => (
         <div
           key={index}
           className={`relative rounded-xl overflow-hidden h-full`}
-          style={{ flex: images.length === 1 ? 1 : index === 0 ? 0.6 : 0.4 }}
+          style={{ flex: getFlexValue(index) }}
         >
           <Image
             src={image}

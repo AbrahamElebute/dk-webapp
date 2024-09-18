@@ -13,14 +13,16 @@ const HorizontalScrollSection: React.FC = () => {
         const sticky = stickyRef.current;
         const stickyParent = stickyParentRef.current;
 
-        const scrollWidth = sticky.scrollWidth;
+        const { scrollWidth } = sticky;
         const verticalScrollHeight =
           stickyParent.getBoundingClientRect().height - sticky.offsetHeight;
 
         const stickyTopPosition = sticky.getBoundingClientRect().top;
 
         // If the sticky element hasn't entered the view, exit
-        if (stickyTopPosition > 1) return;
+        if (stickyTopPosition > 1) {
+          return;
+        }
 
         // Calculate the horizontal scroll position based on vertical scroll
         const scrolledDistance = stickyParent.getBoundingClientRect().top;

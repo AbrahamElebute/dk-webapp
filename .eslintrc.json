@@ -2,7 +2,7 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "no-console": "error",
-    "no-undef": "error",
+    // "no-undef": "error",
     "no-unused-vars": "error",
     "no-use-before-define": "error",
     "use-isnan": "error",
